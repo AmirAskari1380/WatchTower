@@ -1,28 +1,18 @@
 {
-  "name": "watchtower",
+  "name": "watchtower-live",
   "version": "1.0.0",
-  "description": "A bug bounty programs watche tower, for any changes",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AmirAskari1380/WatchTower.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AmirAskari1380/WatchTower/issues"
-  },
-  "homepage": "https://github.com/AmirAskari1380/WatchTower#readme",
   "dependencies": {
+    "discord-webhook-node": "^1.1.8",
     "express": "^4.18.2",
-    "mongoose": "^7.5.0",
-    "node-cron": "^3.0.2"
-  },
-  "devDependencies": {
+    "mongoose": "^7.4.3",
+    "node-cron": "^3.0.2",
     "nodemon": "^3.0.1"
   }
 }
