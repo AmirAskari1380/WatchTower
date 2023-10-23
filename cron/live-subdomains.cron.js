@@ -6,13 +6,13 @@ const { MessageBuilder } = require('discord-webhook-node');
 const target = require('../models/target.model')
 
 async function resolve() {
-    console.log("Going to run puredns on all targets ...")
+    console.log("Going to run dnsx on all targets ...")
     const targets = await target.find({})
 
     targets.forEach(async (t) => {
         const subdomains = await subdomain.find({ target: t._id }).select('subdomain').distinct('subdomain')
         // console.log(`echo ${subdomains.join("\n")} | jq -r '.[]' | puredns -q`)
-        exec(`echo "${subdomains.join("\n")}" | puredns resolve -q`, async (error, stdout, stderr) => {
+        exec(`echo "${subdomains.join("\n")}" | dnsx -silent`, async (error, stdout, stderr) => {
             if (error) {
                 console.log(`When trying to run puredns, we got some error: ${error}`)
                 return;

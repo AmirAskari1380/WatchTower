@@ -8,6 +8,10 @@ const livesubdomainSchema = new mongoose.Schema({
     subdomain: {
         type: String,
         unique: true
+    },
+    createdAt : {
+        type: Date,
+        default: Date.now
     }
 })
 
