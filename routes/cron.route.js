@@ -4,6 +4,7 @@ const router = express.Router()
 const httpx = require('../cron/http-service.cron')
 const resolve = require('../cron/live-subdomains.cron')
 const SubdomainEnumeration = require('../cron/subdomain-enumeration.cron')
+const SubdomainEnum = require('../cron/otx.cron')
 
 router.get('/all', (req, res) => {
     res.send(cronController.getAllCrons())
@@ -18,9 +19,9 @@ router.delete('/deactive/:id', (req, res) => {
 })
 
 router.get('/test', (req, res) => {
-    httpx()
+    // httpx()
     // resolve()
-    // SubdomainEnumeration()
+    SubdomainEnumeration()
     res.send({"meesage": "Function going to run ..."})
 })
 

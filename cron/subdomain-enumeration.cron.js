@@ -42,6 +42,10 @@ async function enumeration() {
                 })
 
                 await subdomain.insertMany(operations)
+                console.log("New Subdomains: ")
+                console.log(new_subdomains)
+                console.log("Subdomains: ")
+                console.log(subdomains.length)
 
                 if (new_subdomains.length > 0) {
                     const message = new MessageBuilder()
